@@ -145,25 +145,31 @@
         
         /* ---- ALTERAÇÕES NA SEÇÃO DE CONTATO ---- */
         #contato h2 {
-            margin-bottom: 80px; 
+            text-align: center;
+            margin-bottom: 30px; /* Reduz a margem inferior do título */
+            font-weight: normal;
+            color: #741327;
         }
 
-        /* Modificado para alinhamento inferior com o mapa */
         #contato .row {
-            align-items: flex-end; /* Alinha os itens pela base */
+            align-items: flex-start; /* Alinha os itens pela parte superior (topo) */
         }
 
         .contact-info {
             height: 100%; /* Garante que a coluna de info se estique */
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Alinha o conteúdo da coluna à parte inferior */
-            padding-bottom: 0; /* Remove padding inferior padrão do contact-info se houver */
+            justify-content: flex-start; /* Alinha o conteúdo da coluna à parte superior */
+            padding-bottom: 0; 
         }
-        .contact-info > *:not(.doctoralia-widget-container) { /* Alinha todos os elementos exceto o widget */
-            margin-bottom: 1rem; /* Adiciona espaçamento entre os itens de contato */
+        .contact-info > *:not(.doctoralia-widget-container) {
+            margin-bottom: 1rem;
         }
 
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 0;
+        }
         .contact-info i {
             font-size: 1.8rem;
             color: #741327;
@@ -171,24 +177,19 @@
             width: 35px;
         }
         
-        .contact-info p {
-            font-size: 1.1em;
-            margin-bottom: 0; /* Remove margem inferior padrão dos parágrafos para controlar com o flexbox */
-        }
-
-        /* Estilos específicos para o container do widget */
         .doctoralia-widget-container {
-            width: 100%; /* Garante que o widget ocupe a largura total da coluna */
-            max-width: 400px; /* Limite um pouco a largura do widget, se desejar */
-            margin-top: 2rem; /* Espaçamento acima do widget */
-            margin-left: -5px; /* Ajuste fino para alinhar com o ícone, se necessário */
+            width: 100%; 
+            max-width: 500px; /* Aumentado o max-width para permitir que o widget seja maior */
+            margin-top: 2rem; 
+            margin-left: -5px; 
+            align-self: flex-start; /* Garante que o widget se alinhe ao início da coluna flex */
         }
         /* ---- FIM DAS ALTERAÇÕES ---- */
 
         #contato iframe {
             width: 100%;
-            height: 100%;
-            min-height: 400px;
+            height: 100%; /* Garante que o mapa preencha a altura disponível da coluna */
+            min-height: 400px; /* Mantém uma altura mínima para o mapa */
             border: 0;
             border-radius: 10px;
         }
@@ -376,7 +377,7 @@
             <h2>Contato e Localização</h2>
             <div class="row">
                 <!-- Coluna de informações -->
-                <div class="col-lg-6 d-flex flex-column"> <!-- Adicionado d-flex flex-column aqui -->
+                <div class="col-lg-6 d-flex flex-column"> 
                     <div class="contact-info mb-4">
                         <p class="d-flex align-items-center"><i class="fas fa-map-marker-alt"></i> <span>Rua Santos Dumont, 2708, 4 Andar<br>Centro, Toledo - PR, 85900-010</span></p>
                         <p class="d-flex align-items-center"><i class="fas fa-phone"></i> <a href="tel:+5545988424673" class="text-decoration-none text-dark">(45) 98842-4673</a></p>
@@ -386,7 +387,7 @@
                         <p class="d-flex align-items-center"><i class="fas fa-clock"></i> <span>Segunda a Sexta, das 08h às 18h</span></p>
 
                         <!-- WIDGET DA DOCTORALIA INSERIDO AQUI -->
-                        <div class="doctoralia-widget-container"> <!-- Classe nova para estilização -->
+                        <div class="doctoralia-widget-container"> 
                             <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/heloise-kienen-2/ginecologista/toledo2" rel="nofollow" data-zlw-doctor="heloise-kienen-2" data-zlw-type="big" data-zlw-opinion="true" data-zlw-hide-branding="true" data-zlw-saas-only="false" data-zlw-a11y-title="Widget de marcação de consultas médicas">Heloise Kienen - Doctoralia.com.br</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
                         </div>
                         <!-- FIM DO WIDGET DA DOCTORALIA -->
