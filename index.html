@@ -146,7 +146,7 @@
         /* ---- ALTERAÇÕES NA SEÇÃO DE CONTATO ---- */
         #contato h2 {
             text-align: center;
-            margin-bottom: 30px; /* Reduz a margem inferior do título */
+            margin-bottom: 30px; /* Reduzida a margem inferior do título */
             font-weight: normal;
             color: #741327;
         }
@@ -155,41 +155,41 @@
             align-items: flex-start; /* Alinha os itens pela parte superior (topo) */
         }
 
-        .contact-info {
-            height: 100%; /* Garante que a coluna de info se estique */
+        .contact-info-wrapper { /* Novo wrapper para o conteúdo da coluna esquerda */
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* Alinha o conteúdo da coluna à parte superior */
-            padding-bottom: 0; 
-        }
-        .contact-info > *:not(.doctoralia-widget-container) {
-            margin-bottom: 1rem;
+            height: 100%; /* Permite que este wrapper preencha a altura da coluna */
         }
 
+        .contact-info { /* Mantido para os estilos dos ícones/texto */
+            padding-bottom: 0; 
+        }
         .contact-info p {
             font-size: 1.1em;
-            margin-bottom: 0;
+            margin-bottom: 1rem; /* Adicionado espaçamento entre os parágrafos de contato */
         }
         .contact-info i {
             font-size: 1.8rem;
             color: #741327;
             margin-right: 20px;
             width: 35px;
+            flex-shrink: 0; /* Impede que o ícone encolha */
         }
         
         .doctoralia-widget-container {
             width: 100%; 
-            max-width: 500px; /* Aumentado o max-width para permitir que o widget seja maior */
+            max-width: 450px; /* Ajuste o max-width aqui para o tamanho desejado do widget */
             margin-top: 2rem; 
-            margin-left: -5px; 
+            margin-left: 0; /* Removido o ajuste negativo para alinhar à esquerda */
             align-self: flex-start; /* Garante que o widget se alinhe ao início da coluna flex */
         }
         /* ---- FIM DAS ALTERAÇÕES ---- */
 
         #contato iframe {
             width: 100%;
-            height: 100%; /* Garante que o mapa preencha a altura disponível da coluna */
-            min-height: 400px; /* Mantém uma altura mínima para o mapa */
+            height: 100%; /* Muito importante para o mapa preencher a altura da coluna */
+            min-height: 400px; 
             border: 0;
             border-radius: 10px;
         }
@@ -378,13 +378,15 @@
             <div class="row">
                 <!-- Coluna de informações -->
                 <div class="col-lg-6 d-flex flex-column"> 
-                    <div class="contact-info mb-4">
-                        <p class="d-flex align-items-center"><i class="fas fa-map-marker-alt"></i> <span>Rua Santos Dumont, 2708, 4 Andar<br>Centro, Toledo - PR, 85900-010</span></p>
-                        <p class="d-flex align-items-center"><i class="fas fa-phone"></i> <a href="tel:+5545988424673" class="text-decoration-none text-dark">(45) 98842-4673</a></p>
-                        <p class="d-flex align-items-center"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5545988424673" target="_blank" class="text-decoration-none text-dark">Agende pelo WhatsApp</a></p>
-                        <p class="d-flex align-items-center"><i class="fab fa-instagram"></i> <a href="https://instagram.com/heloisekienen" target="_blank" class="text-decoration-none text-dark">Siga no Instagram</a></p>
-                        <p class="d-flex align-items-center"><i class="fas fa-envelope"></i> <a href="mailto:goheloisekienen@gmail.com" class="text-decoration-none text-dark">goheloisekienen@gmail.com </a></p>
-                        <p class="d-flex align-items-center"><i class="fas fa-clock"></i> <span>Segunda a Sexta, das 08h às 18h</span></p>
+                    <div class="contact-info-wrapper mb-4"> <!-- Usando o novo wrapper -->
+                        <div class="contact-info"> <!-- Conteúdo de contato -->
+                            <p class="d-flex align-items-center"><i class="fas fa-map-marker-alt"></i> <span>Rua Santos Dumont, 2708, 4 Andar<br>Centro, Toledo - PR, 85900-010</span></p>
+                            <p class="d-flex align-items-center"><i class="fas fa-phone"></i> <a href="tel:+5545988424673" class="text-decoration-none text-dark">(45) 98842-4673</a></p>
+                            <p class="d-flex align-items-center"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5545988424673" target="_blank" class="text-decoration-none text-dark">Agende pelo WhatsApp</a></p>
+                            <p class="d-flex align-items-center"><i class="fab fa-instagram"></i> <a href="https://instagram.com/heloisekienen" target="_blank" class="text-decoration-none text-dark">Siga no Instagram</a></p>
+                            <p class="d-flex align-items-center"><i class="fas fa-envelope"></i> <a href="mailto:goheloisekienen@gmail.com" class="text-decoration-none text-dark">goheloisekienen@gmail.com </a></p>
+                            <p class="d-flex align-items-center"><i class="fas fa-clock"></i> <span>Segunda a Sexta, das 08h às 18h</span></p>
+                        </div>
 
                         <!-- WIDGET DA DOCTORALIA INSERIDO AQUI -->
                         <div class="doctoralia-widget-container"> 
